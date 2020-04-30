@@ -23,7 +23,7 @@ stages:
     - task: Maven@3
       inputs:
         mavenPomFile: 'pom.xml'
-        goals: 'clean, package'
+        goals: 'clean package'
     - task: Docker@2
       displayName: Build an image
       inputs:
