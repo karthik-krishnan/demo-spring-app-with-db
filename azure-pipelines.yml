@@ -34,7 +34,7 @@ stages:
 - stage: Dockerize
   displayName: Dockerize
   jobs:
-  - job: Build Docker Image
+  - job: Build_Docker_Image
     displayName: Build Docker Image
     pool:
       vmImage: 'ubuntu-latest'
