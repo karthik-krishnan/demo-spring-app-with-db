@@ -31,5 +31,20 @@ stages:
         dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
         tags: |
           $(tag)
+  - stage: Dockerize
+    displayName: Dockerize
+    jobs:
+      - job: Build Docker Image
+        displayName: Build Docker Image
+        pool:
+          vmImage: 'ubuntu-latest'
+        steps:
+          - task: Docker@2
+            displayName: Build an image
+            inputs:
+              command: build
+              dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
+              tags: |
+                $(tag)
 
 
